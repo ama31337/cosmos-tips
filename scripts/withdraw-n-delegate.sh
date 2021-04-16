@@ -81,7 +81,7 @@ sleep 5
 if [[ $(bc -l <<< "${DEL_BALANCE_TO_STAKE} > ${MIN_STAKE}") -eq 1 ]]
   then
     echo "staking $DEL_BALANCE_TO_STAKE regen from delegator address"
-    echo -e "${PASS}\n" | ${APP_PATH} tx staking delegate ${VALOPER} ${DEL_BALANCE_TO_STAKE}uregen --from ${VAL_ACCOUNT} --chain-id ${CHAIN_ID} --node ${NODE_URL} --fees ${TX_FEES} --yes
+    echo -e "${PASS}\n" | ${APP_PATH} tx staking delegate ${VALOPER} ${DEL_BALANCE_TO_STAKE}uregen --from ${DEL_ACCOUNT} --chain-id ${CHAIN_ID} --node ${NODE_URL} --fees ${TX_FEES} --yes
   else
     echo "nothing to stake from delegator address"
 fi
