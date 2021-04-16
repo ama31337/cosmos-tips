@@ -48,7 +48,7 @@ if [[ $(bc -l <<< "${DEL_REWARDS} > ${MIN_WITHDRAW}") -eq 1 ]]
     echo "no delegator rewards to withdraw"
 fi
 
-sleep 5
+sleep 30
 
 # check updated balance
 VAL_BALANCE=$(${APP_PATH} query bank balances ${VAL_ADDRESS} --node ${NODE_URL} -oj | jq -r '.balances | .[].amount')
@@ -65,7 +65,6 @@ DEL_BALANCE_TO_STAKE=$(bc -l <<< "$DEL_BALANCE - $MIN_BALANCE")
 
 VAL_BALANCE_TO_STAKE2=$(bc -l <<< "$VAL_BALANCE_TO_STAKE/1000000")
 DEL_BALANCE_TO_STAKE2=$(bc -l <<< "$DEL_BALANCE_TO_STAKE/1000000")
-
 
 # stake from validator address
 sleep 5
