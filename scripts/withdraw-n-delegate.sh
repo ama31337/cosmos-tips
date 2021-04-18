@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#export path
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin:$GOBIN
+
 # set app and network
 APP_NAME="regen"
 APP_PATH=`which $APP_NAME`
